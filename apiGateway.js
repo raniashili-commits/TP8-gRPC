@@ -1,0 +1,30 @@
+const typeDefs = `#graphql
+  type Movie {
+    id: String!
+    title: String!
+    description: String!
+  }
+
+  type TVShow {
+    id: String!
+    title: String!
+    description: String!
+  }
+
+  type Query {
+    movie(id: String!): Movie
+    movies: [Movie]
+    tvShow(id: String!): TVShow
+    tvShows: [TVShow]
+  }
+
+  type Mutation {
+    createMovie(title: String!, description: String!): Movie
+    updateMovie(id: String!, title: String!, description: String!): Movie
+    deleteMovie(id: String!): String
+
+    createTVShow(title: String!, description: String!): TVShow
+    updateTVShow(id: String!, title: String!, description: String!): TVShow
+    deleteTVShow(id: String!): String
+  }
+`;
